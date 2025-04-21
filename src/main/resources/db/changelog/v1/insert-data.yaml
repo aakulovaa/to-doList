@@ -1,0 +1,219 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-users
+      author: annakulova
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user1"
+              - column:
+                  name: email
+                  value: "user1@example.com"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: is_active
+                  value: "true"
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user2"
+              - column:
+                  name: email
+                  value: "user2@example.com"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: is_active
+                  value: "false"
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user3"
+              - column:
+                  name: email
+                  value: "user3@example.com"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: is_active
+                  value: "true"
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user4"
+              - column:
+                  name: email
+                  value: "user4@example.com"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: is_active
+                  value: "false"
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user5"
+              - column:
+                  name: email
+                  value: "user5@example.com"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: is_active
+                  value: "true"
+
+  - changeSet:
+      id: insert-task
+      author: annakulova
+      changes:
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: title
+                  value: "Встреча с Ларисой"
+              - column:
+                  name: description
+                  value: "В 14:00, Проспект Революции, 19"
+              - column:
+                  name: priority
+                  value: "средний"
+              - column:
+                  name: status
+                  value: "выполнено"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: user_id
+                  value: "1"
+
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: title
+                  value: "Дизайн прототипа"
+              - column:
+                  name: description
+                  value: "Обновление веб-версии"
+              - column:
+                  name: priority
+                  value: "высокий"
+              - column:
+                  name: status
+                  value: "не выполнено"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: user_id
+                  value: "2"
+
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: title
+                  value: "Не забыть зонтик"
+              - column:
+                  name: priority
+                  value: "низкий"
+              - column:
+                  name: status
+                  value: "не выполнено"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: user_id
+                  value: "1"
+
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: title
+                  value: "Организовать фотосъемку"
+              - column:
+                  name: description
+                  value: "Фотосъемка в стиле будуар"
+              - column:
+                  name: priority
+                  value: "высокий"
+              - column:
+                  name: status
+                  value: "не выполнено"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: user_id
+                  value: "3"
+
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: title
+                  value: "Зайти в магазин"
+              - column:
+                  name: description
+                  value: "Купить: молоко, яйца, хлеб"
+              - column:
+                  name: priority
+                  value: "средний"
+              - column:
+                  name: status
+                  value: "выполнено"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: user_id
+                  value: "4"
+
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: title
+                  value: "Тренировка"
+              - column:
+                  name: description
+                  value: "Барре в 21:00"
+              - column:
+                  name: priority
+                  value: "средний"
+              - column:
+                  name: status
+                  value: "не выполнено"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: user_id
+                  value: "5"
+
+
