@@ -33,6 +33,12 @@ public class TaskController {
         return ResponseEntity.ok(tasks);
     }
 
+    @GetMapping("/sort/user/{userId}")
+    public ResponseEntity<List<Task>> findWithSortingTasksByUserId(@PathVariable Long userId){
+        List<Task> tasks = taskService.findWithSortingTasksByUserId(userId);
+        return ResponseEntity.ok(tasks);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<Task> saveTask(@RequestBody TaskDTO taskDTO){
         Task createdTask = taskService.saveTask(taskDTO);

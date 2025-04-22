@@ -8,6 +8,7 @@ import com.todo.todoList.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,6 +34,16 @@ public class TaskService {
 
     public List<Task> findTasksByUserId(Long userId){
         return taskRepository.findByUserId(userId);
+    }
+
+    public List<Task> findWithSortingTasksByUserId(Long userId){
+        Sort sort = Sort.by(
+                Sort.Order.asc("title"),
+                Sort.Order.desc("status"),
+                Sort.Order.asc("priority"),
+                Sort.Order.desc("createdAt")
+        );
+        return taskRepository.findWithSortingByUserId(userId, sort);
     }
 
     public Task saveTask(TaskDTO taskDTO){
