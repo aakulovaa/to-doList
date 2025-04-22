@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -30,6 +31,10 @@ public class TaskService {
 
     public List<Task> findAllTasks(){
         return taskRepository.findAll();
+    }
+
+    public Optional<Task> findTaskById(Long taskId){
+        return taskRepository.findById(taskId);
     }
 
     public List<Task> findTasksByUserId(Long userId){
