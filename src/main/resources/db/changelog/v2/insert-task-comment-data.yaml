@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-task-comments
+      author: annakulova
+      changes:
+        - insert:
+            tableName: task_comments
+            columns:
+              - column:
+                  name: content
+                  value: "Белый хлеб!"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: task_id
+                  value: "5"
+              - column:
+                  name: user_id
+                  value: "4"
+
+        - insert:
+            tableName: task_comments
+            columns:
+              - column:
+                  name: content
+                  value: "Купить по дороге кексы"
+              - column:
+                  name: created_at
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: task_id
+                  value: "1"
+              - column:
+                  name: user_id
+                  value: "1"

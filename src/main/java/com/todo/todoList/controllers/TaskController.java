@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -27,9 +28,21 @@ public class TaskController {
         return ResponseEntity.ok(tasks);
     }
 
+    @GetMapping("/{taskId}")
+    public ResponseEntity<Optional<Task>> findTaskById(@PathVariable Long taskId){
+        Optional<Task> task = taskService.findTaskById(taskId);
+        return ResponseEntity.ok(task);
+    }
+
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<Task>> findTasksByUserId(@PathVariable Long userId){
         List<Task> tasks = taskService.findTasksByUserId(userId);
+        return ResponseEntity.ok(tasks);
+    }
+
+    @GetMapping("/sort/user/{userId}")
+    public ResponseEntity<List<Task>> findWithSortingTasksByUserId(@PathVariable Long userId){
+        List<Task> tasks = taskService.findWithSortingTasksByUserId(userId);
         return ResponseEntity.ok(tasks);
     }
 

@@ -3,3 +3,7 @@ databaseChangeLog:
       file: db/changelog/v1/init-schema.yaml
   - include:
       file: db/changelog/v1/insert-data.yaml
+  - include:
+      file: db/changelog/v2/create-task-comment-table.yaml
+  - include:
+      file: db/changelog/v2/insert-task-comment-data.yaml
